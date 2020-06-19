@@ -23,6 +23,18 @@ Things you may want to cover:
 
 * ...
 
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|email|integer|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
+
+### Association
+- has_many :group
+- has_many :messages
+
 ## groups_usersテーブル
 
 |Column|Type|Options|
