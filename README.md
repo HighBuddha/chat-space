@@ -29,7 +29,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|email|integer|null: false|
+|email|string|null: false|
 |password|string|null: false|
 |nickname|string|null: false|
 
