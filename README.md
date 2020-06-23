@@ -43,7 +43,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|null: false, foreign_key: true|
-|body_id|reference|foreign_key: true|g
+|body_id|reference|foreign_key: true|
 
 ### Association
 - has_many :groups_users
