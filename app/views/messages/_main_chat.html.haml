@@ -1,0 +1,38 @@
+.main-chat
+  .group-info 
+    .group-info__leftHeader
+      .group-info__title test
+      %ul.group-info__groupMember 
+        Member :
+        %li.group-info__MemberName masa
+    %a.group-info__editButton{href: '#'} Edit
+
+  .message-list
+    .message-list__messages
+      .message-list__messageDetail
+        .message-list__userName masa
+        .message-list__messageDate 2020年6月29日 17時31分
+      .message-list__message おはよう！
+
+    .message-list__messages
+      .message-list__messageDetail
+        .message-list__userName masa
+        .message-list__messageDate 2020年6月29日 17時31分
+      .message-list__message おはよう！
+
+    .message-list__messages
+      .message-list__messageDetail
+        .message-list__userName masa
+        .message-list__messageDate 2020年6月29日 17時31分
+      .message-list__message おはよう！
+
+  %footer
+    %form
+      .form__contents
+        %input.form__textForm{:placeholder => "type a text"}
+        %label{class: "form__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "form__selectFile"}
+      %input.form__submit{:type => "submit", :value => "Send"}
+
+  
