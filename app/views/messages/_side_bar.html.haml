@@ -9,16 +9,10 @@
         = link_to edit_user_path(current_user), class: "Contents__btn Contents__btn--system" do
           =icon('fas', 'cog')
   .side-bar__list
-    .side-bar__group-list
-      %p.side-bar__group-name techcamp
-      %p.side-bar__message まだメッセージはありません
-    .side-bar__group-list
-      %p.side-bar__group-name techcamp
-      %p.side-bar__message まだメッセージはありません
-    .side-bar__group-list
-      %p.side-bar__group-name techcamp
-      %p.side-bar__message まだメッセージはありません
-    .side-bar__group-list
-      %p.side-bar__group-name techcamp
-      %p.side-bar__message まだメッセージはありません
-    
+    - current_user.groups.each do |group|
+      .side-bar__group-list
+        = link_to '#' do
+          .side-bar__group-name 
+            = group.name
+          .side-bar__message メッセージはまだありません
+
