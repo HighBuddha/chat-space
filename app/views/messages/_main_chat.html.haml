@@ -1,38 +1,24 @@
 .main-chat
   .group-info 
     .group-info__leftHeader
-      .group-info__title test
+      .group-info__title 
+        = @group.name
       %ul.group-info__groupMember 
-        Member :
-        %li.group-info__MemberName masa
-    %a.group-info__editButton{href: '#'} Edit
-
+        Member： &nbsp
+        - @group.users.each do |user|
+          %li.group-info__MemberName
+            = user.name 
+    .group-info__editButton
+      = link_to edit_group_path(@group) do
+        Edit
   .message-list
-    .message-list__messages
-      .message-list__messageDetail
-        .message-list__userName masa
-        .message-list__messageDate 2020年6月29日 17時31分
-      .message-list__message おはよう！
-
-    .message-list__messages
-      .message-list__messageDetail
-        .message-list__userName masa
-        .message-list__messageDate 2020年6月29日 17時31分
-      .message-list__message おはよう！
-
-    .message-list__messages
-      .message-list__messageDetail
-        .message-list__userName masa
-        .message-list__messageDate 2020年6月29日 17時31分
-      .message-list__message おはよう！
+    = render @messages
 
   %footer
-    %form
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .form__contents
-        %input.form__textForm{:placeholder => "type a text"}
-        %label{class: "form__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "form__selectFile"}
-      %input.form__submit{:type => "submit", :value => "Send"}
-
-  
+        = f.text_field :body, class: 'form__textForm', placeholder: 'type a message'
+        = f.label :image, class: 'form__image' do
+          = icon('far', 'image', class: 'form__image')
+          = f.file_field :image, class: 'form__selectFile'
+      = f.submit 'Send', class: 'form__submit'

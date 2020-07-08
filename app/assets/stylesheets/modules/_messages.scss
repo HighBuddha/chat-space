@@ -84,18 +84,23 @@
           display: flex;
           color: #999999;
           font-size: 12px;
+          li{
+            padding-right: 5px;
+          }
         }
     }
-    a {
-      color: #38aef0;
-      font-size: 16px;
+    .group-info__editButton {
       border: solid 1px #38aef0;
       padding: 0 20px;
       margin: 28px 0;
       width: 72px;
       height: 40px;
       line-height: 40px;
-      text-decoration: none;
+      a{
+        text-decoration: none;
+        color: #38aef0;
+        font-size: 16px;
+      }
     }
   }
   .message-list {
@@ -128,7 +133,7 @@
     background-color: #d2d2d2;
     padding: 0 40px;
     @include placemiddle;
-      form {
+      Form {
         display: flex;
         width: 100%;
           .form__contents {
@@ -136,6 +141,14 @@
             width: 100%;
             position: relative;
               .form__textForm {
+                height: 50px;
+                display: block;
+                padding: 0 10px;
+                margin-right: 15px;
+                line-height: 50px;
+                width: 100%;
+              }
+              .field_with_errors {
                 height: 50px;
                 display: block;
                 padding: 0 10px;
