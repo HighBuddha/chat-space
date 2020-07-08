@@ -1,12 +1,16 @@
 .main-chat
   .group-info 
     .group-info__leftHeader
-      .group-info__title test
+      .group-info__title 
+        = @group.name
       %ul.group-info__groupMember 
-        Member :
-        %li.group-info__MemberName masa
-    %a.group-info__editButton{href: '#'} Edit
-
+        Member： &nbsp
+        - @group.users.each do |user|
+          %li.group-info__MemberName
+            = user.name 
+    .group-info__editButton
+      = link_to edit_group_path(@group) do
+        Edit
   .message-list
     = render @messages
 
@@ -18,5 +22,3 @@
           = icon('far', 'image', class: 'form__image')
           = f.file_field :image, class: 'form__selectFile'
       = f.submit 'Send', class: 'form__submit'
-
-  
