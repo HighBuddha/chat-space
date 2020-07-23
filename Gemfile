@@ -64,3 +64,5 @@ gem 'pry-rails'
 gem 'mini_magick'
 
 gem 'carrierwave'
+
+gem 'jquery'
