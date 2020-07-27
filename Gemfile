@@ -65,4 +65,4 @@ gem 'mini_magick'
 
 gem 'carrierwave'
 
-gem 'jquery'
+gem 'jquery-rails'
