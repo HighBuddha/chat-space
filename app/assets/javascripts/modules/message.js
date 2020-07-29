@@ -3,7 +3,7 @@ $(function() {
     // 「もしメッセージに画像が含まれていたら」という条件式
     if (message.image) {
       let html = 
-      `<div class="message-list__messages">
+      `<div class="message-list__messages" data-message-id=${message.id}>
         <div class="message-list__messageDetail">
           <div class="message-list__userName">
             ${message.user_name}
@@ -22,7 +22,7 @@ $(function() {
       return html;
     } else {
       let html = 
-      `<div class="message-list__messages">
+      `<div class="message-list__messages" data-message-id=${message.id}>
         <div class="message-list__messageDetail">
           <div class="message-list__userName">
             ${message.user_name}
@@ -62,6 +62,7 @@ $(function() {
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.Form__submit').prop("disabled", false);
     });
   });
 });
